@@ -1,0 +1,43 @@
+doctype
+head
+    title Sample Page
+    meta(charset='utf-8')
+    link(rel='stylesheet',href='bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet',href='css/main.css')
+body
+div(id='menu')
+    ul
+        li
+            a(href='#!/') Start
+        li
+            a(href='#!/success') Success
+        li
+            a(href='#!/error') Error
+.panel.panel-primary(id='block')
+
+script(type='text/template', id='start')
+    .panel.panel-primary
+        .panel-heading Ввод
+            .userplase
+                label(for='username') Имя пользователя
+                input.form-control(type='text', id='username')
+            .buttonplace
+                button.btn.btn-default(type='button') Проверить
+
+script(type='text/template', id='error')                
+    .panel.panel-danger
+        .panel-heading Ошибки
+            Ошибка пользователь не найден
+            a(href="#!/") Go Back
+
+script(type='text/template', id='success')               
+    .panel.panel-success
+        .panel-heading Успешное выполнение
+            Пользователь найден.
+            a(href="#!/") Go Back
+
+script(src='bower_components/jquery/dist/jquery.min.js')
+script(src='bower_components/underscore/underscore-min.js')
+script(src='bower_components/backbone/backbone-min.js')
+script(src='js/app.js')
+script(src='js/controller.js')
